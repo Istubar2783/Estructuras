@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<title>El Escoces Errante</title>
+	
+
+
+    <link rel="stylesheet" href="Estructuras.css">
+	
+</head>
+	<body>
+
+        
+		<!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+			<div id="player"></div>
+
+			<script>
+			  // 2. This code loads the IFrame Player API code asynchronously.
+			  var tag = document.createElement('script');
+		
+			  tag.src = "https://www.youtube.com/iframe_api";
+			  var firstScriptTag = document.getElementsByTagName('script')[0];
+			  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+		
+			  // 3. This function creates an <iframe> (and YouTube player)
+			  //    after the API code downloads.
+			  var player;
+			  function onYouTubeIframeAPIReady() {
+				player = new YT.Player('player', {
+				  height: '360',
+				  width: '640',
+				  videoId: 'M7lc1UVf-VE',
+				  events: {
+					'onReady': onPlayerReady,
+					'onStateChange': onPlayerStateChange
+				  }
+				});
+			  }
+		
+			  // 4. The API will call this function when the video player is ready.
+			  function onPlayerReady(event) {
+				event.target.playVideo();
+			  }
+		
+			  // 5. The API calls this function when the player's state changes.
+			  //    The function indicates that when playing a video (state=1),
+			  //    the player should play for six seconds and then stop.
+			  var done = false;
+			  function onPlayerStateChange(event) {
+				if (event.data == YT.PlayerState.PLAYING && !done) {
+				  setTimeout(stopVideo, 6000);
+				  alert("Arrancaste el video");
+				  done = true;
+				}
+			  }
+			  function stopVideo() {
+				player.stopVideo();
+			  }
+			  
+
+			</script>
+    <div id="clock"></div>
+	<div id="Tabla">
+	
+	<!-- Periodo 1 -->   
+	
+	
+	
+	<div class="Vacio1"></div>
+	
+	
+	<div class="Estructura1" onclick="Estructura1()"><h3>Estructura de Lewis O<sub>2</sub> Oxigeno</h3></div>
+    <div class="Estructura2" onclick="Estructura2()"><h3>Estructura de Lewis N<sub>2</sub> Nitrogeno</h3></div>
+    <div class="Estructura3" onclick="Estructura3()"><h3>Estructura de Lewis NO Monoxido de Nitrogeno</h3></div>
+    <div class="Estructura4" onclick="Estructura4()"><h3>Estructura de Lewis HCN Acido Cianhidrico</h3></div>
+	<div class="Estructura5" onclick="Estructura5()"><h3>Estructura de Lewis CO Monoxido de Carbono</h3></div>
+    <div class="Estructura6" onclick="Estructura6()"><h3>Estructura de Lewis H20 Agua</h3></div>
+    <div class="Estructura7" onclick="Estructura7()"><h3>Estructura de Lewis SO2 Dioxido de Azufre</h3></div>
+    <div class="Estructura8" onclick="Estructura8()"><h3>Estructura de Lewis CO2 Dioxido de Carbono</h3></div>
+	<div class="Estructura9" onclick="Estructura9()"><h3>Estructura de Lewis NO2 Dioxido de Nitrogeno</h3></div>
+	<div class="Estructura10" onclick="Estructura10()"><h3>Estructura de Lewis NH3 Amoniaco</h3></div>
+    <div class="Estructura11" onclick="Estructura11()"><h3>Estructura de Lewis SO3 Trioxido de Azufre</h3></div>
+	<div class="Estructura12" onclick="Estructura12()"><h3>Estructura de Lewis BF3 Trifluoruro de Boro</h3></div>
+    
+
+    
+    </div>
+
+<br></br>
+<div id="Tabla">  
+
+</div>
+
+</body>
+<script src="Estructuras.js"></script>
+
+</html>
